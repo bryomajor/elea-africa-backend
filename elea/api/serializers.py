@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Event, Contact, EventImage
+from .models import Event, Contact, EventImage, Subscribe
 
 class EventImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +18,8 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = ['fullname', 'useremail', 'usermessage']
+
+class SubscribeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscribe
+        fields = ['email']
