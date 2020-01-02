@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
-from .models import Event, Contact
+from .models import Event, Contact, Subscribe
 from rest_framework import viewsets
-from .serializers import EventSerializer, ContactSerializer
+from .serializers import EventSerializer, ContactSerializer, SubscribeSerializer
 
 # Create your views here.
 
@@ -18,3 +18,10 @@ class ContactViewSet(viewsets.ModelViewSet):
     """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+
+class SubscribeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows posting of subscriptions.
+    """
+    queryset = Subscribe.objects.all()
+    serializer_class = SubscribeSerializer
