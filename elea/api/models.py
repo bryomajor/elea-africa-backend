@@ -27,3 +27,6 @@ class Contact(models.Model):
 class EventImage(models.Model):
     image = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(1280)], format='JPEG', options={'quality': 70})
     event = models.ForeignKey('event', related_name = 'eventimages', on_delete=models.PROTECT)
+
+class Subscribe(models.Model):
+    email = models.EmailField()
