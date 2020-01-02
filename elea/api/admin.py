@@ -11,3 +11,5 @@ class EventAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Contact)
+
+admin.site.site_header = "Elea Africa Backend"
